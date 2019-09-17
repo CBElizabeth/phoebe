@@ -1,6 +1,5 @@
 # phoebe 
 An AI companion to help nudge the ADHD brain in the right direction.
----
 
 ## Vision
 Phoebe is an intelligent and tactful AI companion who begins by asking you lots of questions either by voice, or by visual prompt. She has learned a lot about users with ADHD and understands the value of novelty. She starts small by asking you what topic you're most excited about right now, presenting a list of options gleaned from your recent activity (with permission, of course). Then she asks you what you're struggling to do most right now, listing some of the most common difficulties ADHD brains face, like "getting enough sleep", "remembering to take my medication", or "staying on task". Both of these lists are multiselect, because Phoebe knows that often the answer is "all of the above." This framing helps you start to understand the ways that she could start to help.
