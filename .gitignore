@@ -8,4 +8,5 @@ erl_crash.dump
 *.beam
 /config/*.secret.exs
 .elixir_ls/
-/lib/*.env
+lib/env.dev
+lib/env.test
