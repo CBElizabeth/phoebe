@@ -3,7 +3,7 @@ import Config
 # Import runtime configuration
 import_config "releases.exs"
 
-config :elixir_boilerplate, ElixirBoilerplateWeb.Endpoint,
+config :phoebe, phoebeWeb.Endpoint,
   http: [port: 4001],
   server: false,
   secret_key_base: "G0ieeRljoXGzSDPRrYc2q4ADyNHCwxNOkw7YpPNMa+JgP9iGgJKT4K96Bw/Mf/pd",
@@ -22,4 +22,4 @@ config :elixir_boilerplate, ElixirBoilerplateWeb.Endpoint,
 
 config :logger, level: :warn
 
-config :elixir_boilerplate, ElixirBoilerplate.Repo, pool: Ecto.Adapters.SQL.Sandbox
+config :phoebe, phoebe.Repo, pool: Ecto.Adapters.SQL.Sandbox

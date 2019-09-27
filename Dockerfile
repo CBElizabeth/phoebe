@@ -72,7 +72,7 @@ RUN apk update --no-cache && \
     apk upgrade --no-cache && \
     apk add --no-cache bash openssl-dev erlang-crypto
 
-WORKDIR /opt/elixir_boilerplate
+WORKDIR /opt/phoebe
 
 # Copy the OTP binary from the build step
 COPY --from=builder /opt/build .
@@ -82,10 +82,10 @@ COPY priv/scripts/docker-entrypoint.sh /usr/local/bin
 RUN chmod a+x /usr/local/bin/docker-entrypoint.sh
 
 # Create a non-root user
-RUN adduser -D elixir_boilerplate && \
-    chown -R elixir_boilerplate: /opt/elixir_boilerplate
+RUN adduser -D phoebe && \
+    chown -R phoebe: /opt/phoebe
 
-USER elixir_boilerplate
+USER phoebe
 
 ENTRYPOINT ["docker-entrypoint.sh"]
 CMD ["start"]

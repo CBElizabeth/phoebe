@@ -1,40 +1,98 @@
-# phoebe 
-An AI companion to help nudge the ADHD brain in the right direction.
+# phoebe
 
-## Vision
-Phoebe is an intelligent and tactful AI companion who begins by asking you lots of questions either by voice, or by visual prompt. She has learned a lot about users with ADHD and understands the value of novelty. She starts small by asking you what topic you're most excited about right now, presenting a list of options gleaned from your recent activity (with permission, of course). Then she asks you what you're struggling to do most right now, listing some of the most common difficulties ADHD brains face, like "getting enough sleep", "remembering to take my medication", or "staying on task". Both of these lists are multiselect, because Phoebe knows that often the answer is "all of the above." This framing helps you start to understand the ways that she could start to help.
+| Section                                               | Description                                                     |
+| ----------------------------------------------------- | --------------------------------------------------------------- |
+| [🎯 Objectives and context](#-objectives-and-context) | Project introduction and context                                |
+| [🚧 Dependencies](#-dependencies)                     | Technical dependencies and how to install them                  |
+| [🏎 Kickstart](#kickstart)                             | Details on how to kickstart development on the project          |
+| [🏗 Code & architecture](#-code--architecture)         | Details on the application modules and technical specifications |
+| [🔭 Possible improvements](#-possible-improvements)   | Possible code refactors, improvements and ideas                 |
+| [🚑 Troubleshooting](#-troubleshooting)               | Recurring problems and proven solutions                         |
+| [🚀 Deploy](#-deploy)                                 | Deployment details for various enviroments                      |
 
-Phoebe then asks a series of questions to help understand your day to day activities, and/or reads from your calendar with permission. She sets soft targets for getting you to work on time, or to bed on time, planning to give you advance notice about one or both of those things so that you have time to finish what you're doing and get ready.
+## 🎯 Objectives and context
 
-During a meeting on your work calendar, Phoebe makes the Work Tasks to-do list readily available, as well as a blank space for doodles or handwritten notes. These notes are accessible through your calendar, and they also get filed away to the appropriate "shelf" (terminology pending) categorized via keyword and refined via usage.
+…
 
-30 minutes before the goal bedtime you set, Phoebe reminds you to start getting ready for bed. When you're still moving around 15 minutes after you'd intended to be in bed, she makes note to give you 40 minutes warning next time. When you do make it to bed and start watching a youtube video, she gives you a few minutes to relax before letting you know she'll save it for you to finish tomorrow, if you'd like to try and get some sleep. You decide she's probably right, and she files it to the shelf of recent interests. Tomorrow when you're getting ready for work, she'll ask you if you'd like to pick up where you left off.
+### Browser support
 
-Phoebe learns about your behavior through observation and by asking questions. You told her that one of the things you're struggling with is paying attention during conversations, so when she notices you're scrolling through Twitter while talking to your partner, she gently suggests you focus on your partner.
+| Browser | OS  | Constraint |
+| ------- | --- | ---------- |
+| …       | …   | …          |
 
-Phoebe's goal is to coach you towards being the best version of yourself. She isn't here to tell on you, or make you feel guilty. She understands that sometimes, you just need to keep reading that article. For people without Executive Dysfunction, she may seem overbearing or too granular, but when you've struggled your entire life to remember to do the right thing at the right time, those little reminders can be a lifesaver.
+## 🚧 Dependencies
 
-## User Stories (High Level)
-**As a user** with ADHD
-**I want** to be reminded about things that are important to me
-**so I** do not forget them.
+- Node.js (`>= 10.16, < 11.0`)
+- NPM (`>= 6.9, < 7.0`)
+- Elixir (`~> 1.9`)
+- Erlang (`~> 22.0`)
+- PostgreSQL (`~> 10.0`)
 
-**As a user** with ADHD
-**I want** someone to check in with me about what I was planning to work on
-**so that I** don't get sidetracked for too long.
+## 🏎 Kickstart
 
-**As a user** with ADHD
-**I want** to feel supported
-**so that I** feel less ashamed.
+### Environment variables
 
-**As a user** with ADHD
-**I want** a place to see all the cool things I'm interested in
-**so that I** don't forget them unless I want to.
+All required environment variables are documented in [`.env.dev`](./.env.dev).
 
-**As a user** with ADHD
-**I want** help with goal setting and prioritization
-**so that I** can spend my time doing the things I want to do.
+When running `mix` or `make` commands, it is important that these variables are present in the environment. There are several ways to achieve this. Using [`nv`](https://github.com/jcouture/nv) is recommended since it works out of the box with `.env.*` files.
 
-**As a user** with ADHD
-**I want** tailored behavioral suggestions and questions
-**so that I** can start to recognize when I'm engaging in ADHD-driven behaviors sooner.
+### Initial setup
+
+1. Create both `.env.dev.local` and `.env.test.local` from empty values in [`.env.dev`](./.env.dev) and [`.env.test`](./.env.test)
+2. Install Mix and NPM dependencies with `make dependencies`
+3. Generate values for mandatory secrets in [`.env.dev`](./.env.dev) with `mix phx.gen.secret`
+
+Then, with variables from `.env.dev` and `.env.dev.local` present in the environment:
+
+4. Create and migrate the database with `mix ecto.setup`
+5. Start the Phoenix server with `iex -S mix phx.server` with environment variables from `.env.dev` and `.env.dev.local`
+
+### `make` commands
+
+A `Makefile` is present at the root and expose common tasks. The list of these commands is available with `make help`.
+
+### Database
+
+To avoid running PostgreSQL locally on your machine, a `docker-compose.yml` file is included to be able start a PostgreSQL server in a Docker container with `docker-compose up postgresql`.
+
+### Tests
+
+Tests can be ran with `make test` and test coverage can be calculated with `make check-code-coverage`.
+
+### Linting
+
+Several linting and formatting tools can be ran to ensure coding style consistency:
+
+- `make lint-elixir` ensures Elixir code follows our guidelines and best practices
+- `make lint-scripts` ensures JavaScript code follows our guidelines and best practices
+- `make lint-styles` ensures SCSS code follows our guidelines and best practices
+- `make check-format` ensures all code is properly formatted
+- `make format` formats files using Prettier and `mix format`
+
+### Continuous integration
+
+The `priv/scripts/ci-check.sh` script runs a set of commands (tests, linting, etc.) to make sure the project and its code are in a good state.
+
+## 🏗 Code & architecture
+
+…
+
+## 🔭 Possible improvements
+
+| Description | Priority | Complexity | Ideas |
+| ----------- | -------- | ---------- | ----- |
+| …           | …        | …          | …     |
+
+## 🚑 Troubleshooting
+
+…
+
+## 🚀 Deploy
+
+### Versions & branches
+
+Each deployment is made from a Git tag. The codebase version is managed with [`incr`](https://github.com/jcouture/incr).
+
+### Container
+
+A Docker image running an _OTP release_ can be created with `make build`, tested with `docker-compose up application` and pushed to a registry with `make push`.

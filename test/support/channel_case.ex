@@ -1,4 +1,4 @@
-defmodule ElixirBoilerplateWeb.ChannelCase do
+defmodule phoebeWeb.ChannelCase do
   @moduledoc """
   This module defines the test case to be used by
   channel tests.
@@ -16,8 +16,8 @@ defmodule ElixirBoilerplateWeb.ChannelCase do
   use ExUnit.CaseTemplate
 
   alias Ecto.Adapters.SQL.Sandbox
-  alias ElixirBoilerplate.Repo
-  alias ElixirBoilerplateWeb.Endpoint
+  alias phoebe.Repo
+  alias phoebeWeb.Endpoint
 
   using do
     quote do

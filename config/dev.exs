@@ -3,7 +3,7 @@ import Config
 # Import runtime configuration
 import_config "releases.exs"
 
-config :elixir_boilerplate, ElixirBoilerplateWeb.Endpoint,
+config :phoebe, phoebeWeb.Endpoint,
   code_reloader: true,
   check_origin: false,
   watchers: [
@@ -17,11 +17,11 @@ config :elixir_boilerplate, ElixirBoilerplateWeb.Endpoint,
     patterns: [
       ~r{priv/gettext/.*$},
       ~r{priv/static/.*(js|css|png|jpeg|jpg|gif|svg)$},
-      ~r{lib/elixir_boilerplate_web/.*(ee?x)$}
+      ~r{lib/phoebe_web/.*(ee?x)$}
     ]
   ]
 
-config :elixir_boilerplate, ElixirBoilerplateWeb.ContentSecurityPolicy, allow_unsafe_scripts: true
+config :phoebe, phoebeWeb.ContentSecurityPolicy, allow_unsafe_scripts: true
 
 config :logger, :console, format: "[$level] $message\n"
 

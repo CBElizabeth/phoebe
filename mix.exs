@@ -1,11 +1,11 @@
-defmodule ElixirBoilerplate.Mixfile do
+defmodule phoebe.Mixfile do
   use Mix.Project
 
   @version "0.0.1"
 
   def project do
     [
-      app: :elixir_boilerplate,
+      app: :phoebe,
       version: @version,
       elixir: "~> 1.9",
       erlang: "~> 22.0",
@@ -24,7 +24,7 @@ defmodule ElixirBoilerplate.Mixfile do
 
   def application do
     [
-      mod: {ElixirBoilerplate.Application, []},
+      mod: {phoebe.Application, []},
       extra_applications: [:logger, :runtime_tools]
     ]
   end
@@ -93,9 +93,9 @@ defmodule ElixirBoilerplate.Mixfile do
 
   defp releases do
     [
-      elixir_boilerplate: [
+      phoebe: [
         version: @version,
-        applications: [elixir_boilerplate: :permanent]
+        applications: [phoebe: :permanent]
       ]
     ]
   end

@@ -3,7 +3,7 @@
     "minimum_coverage": 30
   },
   "skip_files": [
-    "lib/elixir-boilerplate/release_tasks.ex",
+    "lib/phoebe/release_tasks.ex",
     "lib/mix/tasks/check.erlang_version.ex",
     "lib/mix/tasks/check.unused_locked_deps.ex",
     "test/support"
